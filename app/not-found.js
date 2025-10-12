@@ -18,9 +18,7 @@ export default function NotFound() {
   if (!mounted) return null
 
   return (
-    <div className={`min-h-screen flex items-center justify-center px-4 ${
-      theme === "light" ? "bg-custom-lightest" : "bg-custom-darkest"
-    }`}>
+    <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: theme === 'dark' ? '#1A1A1A' : '#F8F5E7' }}>
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -42,9 +40,8 @@ export default function NotFound() {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className={`text-9xl md:text-[12rem] font-bold mb-4 ${
-            theme === "light" ? "text-custom-accent" : "text-custom-white"
-          }`}
+          className="text-9xl md:text-[12rem] font-bold mb-4"
+          style={{ color: theme === 'dark' ? '#FFFFFF' : '#2B2B2B' }}
         >
           404
         </motion.h1>
@@ -55,14 +52,10 @@ export default function NotFound() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <h2 className={`text-2xl md:text-3xl font-semibold mb-4 ${
-            theme === "light" ? "text-custom-accent" : "text-custom-white"
-          }`}>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4" style={{ color: theme === 'dark' ? '#FFFFFF' : '#2B2B2B' }}>
             Sayfa Bulunamadı
           </h2>
-          <p className={`text-base md:text-lg mb-8 max-w-md mx-auto ${
-            theme === "light" ? "text-custom-medium" : "text-custom-lighter"
-          }`}>
+          <p className="text-base md:text-lg mb-8 max-w-md mx-auto" style={{ color: theme === 'dark' ? '#E6E6E6' : '#3C3C3C' }}>
             Aradığınız sayfa mevcut değil veya taşınmış olabilir.
           </p>
         </motion.div>
@@ -75,11 +68,11 @@ export default function NotFound() {
         >
           <Link
             href="/"
-            className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-110 hover:shadow-2xl ${
-              theme === "light"
-                ? "bg-custom-accent text-custom-white hover:bg-custom-darkest shadow-lg"
-                : "bg-custom-white text-custom-accent hover:bg-custom-lighter shadow-xl"
-            }`}
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-110 hover:shadow-2xl shadow-lg"
+            style={{
+              backgroundColor: theme === 'dark' ? '#FFFFFF' : '#2B2B2B',
+              color: theme === 'dark' ? '#2B2B2B' : '#FFFFFF'
+            }}
           >
             <FaHome className="text-xl" />
             Ana Sayfaya Dön
@@ -96,9 +89,8 @@ export default function NotFound() {
             rotate: { duration: 20, repeat: Infinity, ease: "linear" },
             scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
           }}
-          className={`absolute top-20 left-20 w-32 h-32 rounded-full blur-3xl opacity-20 ${
-            theme === "light" ? "bg-custom-accent" : "bg-custom-white"
-          }`}
+          className="absolute top-20 left-20 w-32 h-32 rounded-full blur-3xl opacity-20"
+          style={{ backgroundColor: theme === 'dark' ? '#FFFFFF' : '#2B2B2B' }}
         />
         <motion.div
           animate={{ 
@@ -109,9 +101,8 @@ export default function NotFound() {
             rotate: { duration: 25, repeat: Infinity, ease: "linear" },
             scale: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }
           }}
-          className={`absolute bottom-20 right-20 w-40 h-40 rounded-full blur-3xl opacity-20 ${
-            theme === "light" ? "bg-custom-medium" : "bg-custom-lighter"
-          }`}
+          className="absolute bottom-20 right-20 w-40 h-40 rounded-full blur-3xl opacity-20"
+          style={{ backgroundColor: theme === 'dark' ? '#E6E6E6' : '#6B6B6B' }}
         />
       </motion.div>
     </div>

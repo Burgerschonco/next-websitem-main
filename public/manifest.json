@@ -1,0 +1,38 @@
+{
+  "name": "Süleyman Talha Duman - Portfolio",
+  "short_name": "STD Portfolio",
+  "description": "Full-Stack Web Developer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F5E7",
+  "theme_color": "#2B2B2B",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "tr-TR"
+}

@@ -31,12 +31,11 @@ const SplashScreen = () => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className={`fixed inset-0 z-[9999] flex items-center justify-center ${
-            theme === "light" ? "bg-custom-lightest" : "bg-custom-darkest"
-          }`}
+          className="fixed inset-0 z-[9999] flex items-center justify-center"
+          style={{ backgroundColor: theme === 'dark' ? '#1A1A1A' : '#F8F5E7' }}
         >
           <div className="relative">
-            {/* Logo Animation */}
+            {/* Profile Image Animation */}
             <motion.div
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
@@ -49,7 +48,16 @@ const SplashScreen = () => {
               }}
               className="flex justify-center mb-6"
             >
-              <Logo width={100} height={100} />
+              <div className="relative w-32 h-32 rounded-full overflow-hidden shadow-2xl ring-4" style={{ 
+                borderColor: theme === 'dark' ? '#E6E6E6' : '#2B2B2B' 
+              }}>
+                <img
+                  src="/pp.png"
+                  alt="Süleyman Talha Duman"
+                  className="object-cover w-full h-full"
+                  loading="eager"
+                />
+              </div>
             </motion.div>
 
             {/* Text Animation */}
@@ -60,18 +68,15 @@ const SplashScreen = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-center"
             >
-              <h1 className={`text-3xl font-bold mb-2 ${
-                theme === "light" ? "text-custom-accent" : "text-custom-white"
-              }`}>
+              <h1 className="text-3xl font-bold mb-2" style={{ color: theme === 'dark' ? '#FFFFFF' : '#2B2B2B' }}>
                 system.conf
               </h1>
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
-                className={`h-1 rounded-full mx-auto ${
-                  theme === "light" ? "bg-custom-accent" : "bg-custom-white"
-                }`}
+                className="h-1 rounded-full mx-auto"
+                style={{ backgroundColor: theme === 'dark' ? '#FFFFFF' : '#2B2B2B' }}
               />
             </motion.div>
 
@@ -95,9 +100,8 @@ const SplashScreen = () => {
                     repeat: Infinity,
                     delay: index * 0.2,
                   }}
-                  className={`w-2 h-2 rounded-full ${
-                    theme === "light" ? "bg-custom-accent" : "bg-custom-white"
-                  }`}
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: theme === 'dark' ? '#FFFFFF' : '#2B2B2B' }}
                 />
               ))}
             </motion.div>
@@ -112,9 +116,8 @@ const SplashScreen = () => {
                 scale: { duration: 2, repeat: Infinity, ease: "easeInOut" },
                 rotate: { duration: 10, repeat: Infinity, ease: "linear" }
               }}
-              className={`absolute -top-10 -left-10 w-20 h-20 rounded-full blur-2xl opacity-30 ${
-                theme === "light" ? "bg-custom-accent" : "bg-custom-white"
-              }`}
+              className="absolute -top-10 -left-10 w-20 h-20 rounded-full blur-2xl opacity-30"
+              style={{ backgroundColor: theme === 'dark' ? '#FFFFFF' : '#2B2B2B' }}
             />
             <motion.div
               animate={{ 
@@ -125,9 +128,8 @@ const SplashScreen = () => {
                 scale: { duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
                 rotate: { duration: 12, repeat: Infinity, ease: "linear" }
               }}
-              className={`absolute -bottom-10 -right-10 w-24 h-24 rounded-full blur-2xl opacity-30 ${
-                theme === "light" ? "bg-custom-medium" : "bg-custom-lighter"
-              }`}
+              className="absolute -bottom-10 -right-10 w-24 h-24 rounded-full blur-2xl opacity-30"
+              style={{ backgroundColor: theme === 'dark' ? '#E6E6E6' : '#6B6B6B' }}
             />
           </div>
         </motion.div>
