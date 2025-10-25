@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaInfoCircle, FaTools, FaChartBar, FaBriefcase, FaFolder, FaEnvelope } from 'react-icons/fa';
+import { FaInfoCircle, FaTools, FaChartBar, FaBriefcase, FaFolder, FaEnvelope, FaPen } from 'react-icons/fa';
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -32,10 +32,17 @@ const Navigation = () => {
     { id: 'github', label: 'GitHub', icon: FaChartBar },
     { id: 'services', label: 'Hizmetler', icon: FaBriefcase },
     { id: 'projects', label: 'Projeler', icon: FaFolder },
+    { id: 'blog', label: 'Blog', icon: FaPen, isExternal: true },
     { id: 'contact', label: 'İletişim', icon: FaEnvelope },
   ];
 
-  const handleNavClick = (id) => {
+  const handleNavClick = (id, isExternal = false) => {
+    if (isExternal) {
+      // Blog için separate page
+      window.location.href = '/blog';
+      return;
+    }
+    
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
@@ -57,8 +64,8 @@ const Navigation = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 + index * 0.08, type: "spring", stiffness: 300, damping: 20 }}
           whileHover={{ scale: 1.1, x: 5 }}
-          onClick={() => handleNavClick(item.id)}
-          className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex flex-col items-center justify-center gap-0.5 md:gap-1 transition-all duration-300 shadow-lg hover:shadow-xl bg-[#2B2B2B] hover:bg-[#3C3C3C] group ${
+          onClick={() => handleNavClick(item.id, item.isExternal)}
+          className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex flex-col items-center justify-center gap-0.5 md:gap-1 transition-all duration-300 shadow-lg hover:shadow-xl bg-[#2B2B2B] hover:bg-[#3C3B3C] group ${
             activeSection === item.id ? 'ring-2 ring-white scale-110' : ''
           }`}
           aria-label={item.label}

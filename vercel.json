@@ -3,6 +3,18 @@
       { "src": "/about", "dest": "/About" },
       { "src": "/services", "dest": "/Services" },
       { "src": "/projects", "dest": "/Projects" },
-      { "src": "/contact", "dest": "/Contact" }
-    ]
+      { "src": "/contact", "dest": "/Contact" },
+      { "src": "/blog", "dest": "/Blog" },
+      { "src": "/blog/(.*)", "dest": "/Blog/$1" },
+      { "src": "/admin", "dest": "/Admin" }
+    ],
+    "functions": {
+      "backend/backend/src/app.js": {
+        "runtime": "nodejs18.x"
+      }
+    },
+    "env": {
+      "MONGODB_URI": "@mongodb_uri",
+      "NODE_ENV": "production"
+    }
   }
