@@ -1,8 +1,8 @@
-name = "blog-db"
-main = "src/index.js"
+name = "next-websitem-main"
 compatibility_date = "2023-12-01"
+pages_build_output_dir = "out"
 
 [[d1_databases]]
-binding = "blog_db"
+binding = "DB"
 database_name = "blog-db"
 database_id = "fceeb3cc-69fd-43e8-8337-13c8761a36ff"
